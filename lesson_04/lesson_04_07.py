@@ -5,30 +5,46 @@
 
 from math import factorial
 from functools import reduce
+from itertools import count
 
 
-# я хз, в точности по ТЗ пока не получилось
-def fact(iterable):
-    for element in iterable:
-        yield factorial(element)
+def fact():
+    for item in count(1):
+        yield factorial(item)
 
 
-for i in fact([1, 2, 3, 4, 5]):
-    print(i)
+gena = fact()
+counter = 0
+for i in gena:
+    if counter == 10:
+        break
+    else:
+        counter += 1
+        print(f"Factorial {counter} = {i}")
 
 
-numbers = [1, 2, 3, 4, 5]
-
-
-# додумаю позже
-
-limit = 5
-print(
-  reduce(
-    (lambda i, j: i*j),
-    range(1, limit+1)
-  )
-)
+#
+# def fact(iterable):
+#     for element in iterable:
+#         yield factorial(element)
+#
+#
+# for i in fact([1, 2, 3, 4, 5]):
+#     print(i)
+#
+#
+# numbers = [1, 2, 3, 4, 5]
+#
+#
+# # додумаю позже
+#
+# limit = 5
+# print(
+#   reduce(
+#     (lambda i, j: i*j),
+#     range(1, limit+1)
+#   )
+# )
 
 #
 #
